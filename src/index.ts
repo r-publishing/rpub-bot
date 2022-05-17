@@ -210,6 +210,7 @@ observerCheckInterval = setInterval(async () => {
         setTimeout(() => {
             axios.get(nodeUrl + '/api/status', {timeout: 20 * 1000, }).then(resp => {
                 try {
+                    UndoMessage(errMsgUnreachable);
                     const nOfPeers = resp.data.peers;
                     const nOfNodes = resp.data.nodes;
     
@@ -233,6 +234,7 @@ observerCheckInterval = setInterval(async () => {
         setTimeout(() => {
             axios.get(nodeUrl + '/api/blocks', {timeout: 20 * 1000}).then(resp => {
                 try {
+                    UndoMessage(errMsgUnreachable);
                     const blockInfo = resp.data[0];
                     const blockNr = blockInfo.blockNumber; //TODO: make sure block count is increasing
                     const bonds: Array<Bond> = blockInfo.bonds;
