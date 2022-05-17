@@ -277,7 +277,7 @@ observerCheckInterval = setInterval(async () => {
                 const errMsg = timestamp + " - " + "[INFO] sending notification...";
                 errLog.write(errMsg + "\n");
 
-                let notification = "**[MAINNET ERR]** code: " + ErrCodeMap.get(err.code) + ", msg: " + err.message + "\n";
+                let notification = "@everyone **[MAINNET ERR]** code: " + ErrCodeMap.get(err.code) + ", msg: " + err.message + "\n";
                 notification += "Please check the logs and make sure the mainnet is up, thanks! /Bot";
         
                 let sent = await (DISCORD_CLIENT.channels.cache.get('895174803756023818') as TextChannel).send(notification);
