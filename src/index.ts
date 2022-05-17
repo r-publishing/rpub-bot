@@ -269,9 +269,6 @@ observerCheckInterval = setInterval(async () => {
             const now = new Date().getTime();
             const notificationSent = dispatchedNotifications.get(err);
 
-            if (err.timestamp) {
-                console.info(now - err.timestamp)
-            }
             if (err.timestamp && now - err.timestamp > 1 * 60 * 1000 * 3 && !notificationSent) {
                 //No error correction for 3 iterations, notify
 
