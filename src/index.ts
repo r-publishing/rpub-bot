@@ -280,7 +280,7 @@ observerCheckInterval = setInterval(async () => {
                 let notification = "@everyone **[MAINNET ERR]** code: " + ErrCodeMap.get(err.code) + ", msg: " + err.message + "\n";
                 notification += "Please check the logs and make sure the mainnet is up, thanks! /Bot";
         
-                let sent = await (DISCORD_CLIENT.channels.cache.get('895174803756023818') as TextChannel).send(notification);
+                let sent = await (DISCORD_CLIENT.channels.cache.get('970023234869276773') as TextChannel).send(notification);
                 dispatchedNotifications.set(err, {error: err, reverted: false, message: sent } as CriticalNotification)
             }
         })
